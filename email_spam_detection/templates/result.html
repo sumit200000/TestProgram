@@ -1,0 +1,8 @@
+<!-- templates/result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Email: {{ email }}</h2>
+<h3>Status: <span style="color: {% if is_spam %}red{% else %}green{% endif %}; font-weight: 600;">{{ is_spam|yesno:"Spam,Not Spam" }}</span></h3>
+<a href="{% url 'index' %}" class="btn btn-secondary">Go Back</a>
+{% endblock %}
